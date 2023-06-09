@@ -13,6 +13,7 @@ Wake Up
 ## Ürün Açıklaması
 Wake Up insanları bir çocuğun rüyası üzerinden oluşturduğumuz evreni ile  psikolojik olarak etkileyerek bulmaca çözerek ilerlemelerini sağlayan bir oyundur.Klasikleşen bulmacaların yanı sıra yeni bulmacalar ile piyasadan çok farklı bir temayla sizi baş başa bırakır.
 ## Ürün Özellikleri
+-Psikolojik olarak insanları büyülemesi </br>
 -Etkileyeci ve farklı bir dünya sunması </br> 
 -Yeni nesil bulmacalar</br>
 -Sürückleyici Oynanış</br>
