@@ -16,7 +16,7 @@ Wake Up insanları bir çocuğun rüyası üzerinden oluşturduğumuz evreni ile
 -Etkileyeci ve farklı bir dünya sunması </br> 
 -Yeni nesil bulmacalar</br>
 -Sürückleyici Oynanış</br>
--Herkese hitap eden hikate </br>
+-Herkese hitap eden hikaye </br>
 ## Hedef Kitle
 -Psikolojik oyun severler</br>
 -Bulmaca severler </br>
