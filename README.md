@@ -9,7 +9,10 @@ Nisa Üstündağ: Product Owner/Developer</br>
 Kağan Akın:  Designer/Developer
 
 ## Ürün İsmi
-Wake Up
+Wake Up </br>
+
+## Product Backlog URL</br>
+[Wake up team backlog](https://trello.com/b/F17YZahw/wakeup)
 ## Ürün Açıklaması
 Wake Up insanları bir çocuğun rüyası üzerinden oluşturduğumuz evreni ile  psikolojik olarak etkileyerek bulmaca çözerek ilerlemelerini sağlayan bir oyundur.Klasikleşen bulmacaların yanı sıra yeni bulmacalar ile piyasadan çok farklı bir temayla sizi baş başa bırakır.
 ## Ürün Özellikleri
@@ -22,7 +25,9 @@ Wake Up insanları bir çocuğun rüyası üzerinden oluşturduğumuz evreni ile
 -Psikolojik oyun severler</br>
 -Bulmaca severler </br>
 -Klasikleşmiş oyunlardan bıkanlar</br>
-#Juriye not
+
+
+
 ...
 
 
