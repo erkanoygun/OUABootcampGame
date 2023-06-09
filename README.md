@@ -2,10 +2,10 @@
 Dream Makers
 # Ürün İle İlgili Bilgiler
 ## Takım Elemanları
-Samet Saydam:Scrum Master/Developer
-Maya Çankaya:Developer
-Erkan Oygun:Developer
-Nisa Üstündağ:Product Owner/Developer
+Samet Saydam:Scrum Master/Developer </br>
+Maya Çankaya:Developer</br>
+Erkan Oygun:Developer</br>
+Nisa Üstündağ:Product Owner/Developer</br>
 Kağan Akın: Designer/Developer
 
 ## Ürün İsmi
