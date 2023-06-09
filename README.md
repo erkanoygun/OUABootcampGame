@@ -26,8 +26,7 @@ Wake Up insanları bir çocuğun rüyası üzerinden oluşturduğumuz evreni ile
 -Bulmaca severler </br>
 -Klasikleşmiş oyunlardan bıkanlar</br>
 
-
-
+## Juriye not
 ...
 
 
