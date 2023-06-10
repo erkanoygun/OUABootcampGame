@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Box
   - BigBox
+  - pushBox
+  - wall
   layers:
   - Default
   - TransparentFX
