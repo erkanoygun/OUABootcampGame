@@ -6,13 +6,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Transform chestPointTRN;
-    public GameObject chestPointGO;
+    [SerializeField] private GameObject chestPointGO;
     GameObject targetBoxGO;
 
     PlayerMoveController playerMoveControllerSrc;
 
 
-    public bool isTakeBox = false;
+    public bool isTakeItem = false;
     public bool isPushingBox = false;
     bool isGiveBox = false;
     bool isPressE = false;
@@ -28,27 +28,25 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         isPressE = Input.GetKeyDown(KeyCode.E);
-        //Debug.Log(playerMoveControllerSrc.isRaning);
 
         if (isPressE && isGiveBox)
         {
-            //Debug.Log(playerMoveControllerSrc.isRaning);
             if (!playerMoveControllerSrc.isRaning)
             {
-                if (!isTakeBox)
+                if (!isTakeItem)
                 {
-                    isTakeBox = true;
+                    isTakeItem = true;
                 }
                 else
                 {
-                    isTakeBox = false;
+                    isTakeItem = false;
                 }
             }
             
 
         }
 
-        if (isTakeBox)
+        if (isTakeItem)
         {
             targetBoxGO.transform.position = chestPointTRN.position;
         }

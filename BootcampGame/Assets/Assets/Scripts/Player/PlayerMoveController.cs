@@ -6,6 +6,7 @@ public class PlayerMoveController : MonoBehaviour
 {
     private Animator animator;
 
+    [Header("Player Move Variable")]
     public bool isRaning;
     public float moveSpeed = 5f;
     public float rotationSpeed = 7f;
@@ -17,8 +18,9 @@ public class PlayerMoveController : MonoBehaviour
     private bool isJumping = false;
     private Rigidbody rb;
 
+    
     private PlayerController _playerControllerScr;
-
+    private PushBox _pushBoxScr;
 
     Transform playerBodyTrans;
 
@@ -26,10 +28,13 @@ public class PlayerMoveController : MonoBehaviour
     bool _isPressA = false;
     bool _isPressS = false;
     bool _isPressD = false;
+    bool _isPressQ = false;
 
 
     void Start()
     {
+        _pushBoxScr = GetComponentInChildren<PushBox>();
+
         animator = GetComponentInChildren<Animator>();
         playerBodyTrans = transform.GetChild(0);
         targetRotation = playerBodyTrans.localRotation;
@@ -40,11 +45,15 @@ public class PlayerMoveController : MonoBehaviour
 
     void Update()
     {
+        if (isJumping)
+        {
+            if(isCheckGround() <= 0.085f)
+            {
+                isJumping = false;
+            }
+        }
 
-        _isPressW = Input.GetKey(KeyCode.W);
-        _isPressA = Input.GetKey(KeyCode.A);
-        _isPressS = Input.GetKey(KeyCode.S);
-        _isPressD = Input.GetKey(KeyCode.D);
+        keyPushPress();
 
     }
 
@@ -67,6 +76,12 @@ public class PlayerMoveController : MonoBehaviour
         {
             playerMove(Vector3.left, -90f);
         }
+        else if (_isPressQ && _pushBoxScr.isTriggerBigBox && rb.velocity.magnitude <= 0.5)
+        {
+            animator.SetTrigger("pull");
+            Vector3 pushDirection = -playerBodyTrans.forward;
+            rb.AddForce(pushDirection * 2.5f, ForceMode.VelocityChange);
+        }
         else
         {
             isRaning = false;
@@ -74,59 +89,26 @@ public class PlayerMoveController : MonoBehaviour
 
         if (isRaning)
         {
-            if (_playerControllerScr.isTakeBox)
-            {
-                animator.SetBool("walk", true);
-                animator.SetBool("run", false);
-                animator.SetBool("idle", false);
-                animator.SetBool("idle2", false);
-                animator.SetBool("pushing", false);
-            }
-            else if (_playerControllerScr.isPushingBox)
-            {
-                animator.SetBool("run", false);
-                animator.SetBool("walk", false);
-                animator.SetBool("idle", false);
-                animator.SetBool("idle2", false);
-                animator.SetBool("pushing", true);
-            }
-            else
-            {
-                animator.SetBool("run", true);
-                animator.SetBool("walk", false);
-                animator.SetBool("idle", false);
-                animator.SetBool("idle2", false);
-                animator.SetBool("pushing", false);
-            }
+            animator.SetBool("walk", _playerControllerScr.isTakeItem);
+            animator.SetBool("run", !_playerControllerScr.isTakeItem && !_playerControllerScr.isPushingBox);
+            animator.SetBool("idle", false);
+            animator.SetBool("idle2", false);
+            animator.SetBool("pushing", _playerControllerScr.isPushingBox);
 
         }
         else
         {
-            if (_playerControllerScr.isTakeBox)
-            {
-                animator.SetBool("run", false);
-                animator.SetBool("walk", false);
-                animator.SetBool("idle", false);
-                animator.SetBool("pushing", false);
-                animator.SetBool("idle2", true);
-            }
-            
-            else
-            {
-                animator.SetBool("run", false);
-                animator.SetBool("walk", false);
-                animator.SetBool("idle2", false);
-                animator.SetBool("pushing", false);
-                animator.SetBool("idle", true);
-            }
-            
+            animator.SetBool("walk", false);
+            animator.SetBool("run", false);
+            animator.SetBool("idle", !_playerControllerScr.isTakeItem);
+            animator.SetBool("idle2", _playerControllerScr.isTakeItem);
+            animator.SetBool("pushing", false);
+
         }
 
         if (isRotating)
         {
-
             playerBodyTrans.localRotation = Quaternion.Lerp(playerBodyTrans.localRotation, targetRotation, rotationSpeed * Time.deltaTime);
-
 
             if (Quaternion.Angle(playerBodyTrans.localRotation, targetRotation) < 1f)
             {
@@ -136,7 +118,7 @@ public class PlayerMoveController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
         {
-            if (!_playerControllerScr.isTakeBox)
+            if (!_playerControllerScr.isTakeItem)
             {
                 animator.SetTrigger("jump");
                 isJumping = true;
@@ -148,33 +130,49 @@ public class PlayerMoveController : MonoBehaviour
 
     private void playerMove(Vector3 PosDirection, float targetRot)
     {
-        if (_playerControllerScr.isTakeBox)
+        if (_playerControllerScr.isTakeItem)
         {
             transform.Translate(PosDirection * (moveSpeed - 3f) * Time.deltaTime);
-            isRaning = true;
         }
         else if (_playerControllerScr.isPushingBox)
         {
             transform.Translate(PosDirection * (moveSpeed - 4f) * Time.deltaTime);
-            isRaning = true;
         }
         else
         {
-
             transform.Translate(PosDirection * moveSpeed * Time.deltaTime);
-            isRaning = true;
-
         }
         targetRotation = Quaternion.Euler(0f, targetRot, 0f);
         isRotating = true;
+        isRaning = true;
     }
 
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        isJumping = false;
+    }
+
+    private float isCheckGround()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit))
         {
-            isJumping = false;
+            float distanceToGround = hit.distance;
+            return distanceToGround;
         }
+        else
+        {
+            return 0.0f;
+        }
+    }
+
+    void keyPushPress()
+    {
+        _isPressW = Input.GetKey(KeyCode.W);
+        _isPressA = Input.GetKey(KeyCode.A);
+        _isPressS = Input.GetKey(KeyCode.S);
+        _isPressD = Input.GetKey(KeyCode.D);
+        _isPressQ = Input.GetKeyDown(KeyCode.Q);
     }
 }

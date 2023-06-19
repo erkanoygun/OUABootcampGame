@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4000010371122834}
   - component: {fileID: 33000011547514070}
   - component: {fileID: 23000012470331910}
-  - component: {fileID: 64000012938030856}
   m_Layer: 0
   m_Name: trn_Pantry
   m_TagString: Untagged
@@ -84,20 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64000012938030856
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000010607460640}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 06a24e82b6f38e441966665d0946e23c, type: 3}
 --- !u!1 &1000014106964552
 GameObject:
   m_ObjectHideFlags: 0

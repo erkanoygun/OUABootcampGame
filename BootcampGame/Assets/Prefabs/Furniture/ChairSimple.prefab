@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 449054}
   - component: {fileID: 3379956}
   - component: {fileID: 2307556}
-  - component: {fileID: 64000010548413378}
   m_Layer: 0
   m_Name: trn_ChairSimple
   m_TagString: Untagged
@@ -116,17 +115,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64000010548413378
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 177888}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 3164ce28d1ad495498233730ddaa33a6, type: 3}

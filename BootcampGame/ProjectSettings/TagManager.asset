@@ -9,6 +9,7 @@ TagManager:
   - BigBox
   - pushBox
   - wall
+  - takeItem
   layers:
   - Default
   - TransparentFX
