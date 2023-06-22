@@ -7,68 +7,58 @@ public class PlayerController : MonoBehaviour
 {
     Transform chestPointTRN;
     [SerializeField] private GameObject chestPointGO;
-    GameObject targetBoxGO;
+
+    public GameObject targetBoxGO;
 
     PlayerMoveController playerMoveControllerSrc;
 
 
     public bool isTakeItem = false;
     public bool isPushingBox = false;
-    bool isGiveBox = false;
+    public bool isGiveBox = false;
     bool isPressE = false;
+
+    public Transform itemSlot;
 
 
     void Start()
     {
         chestPointTRN = chestPointGO.transform;
         playerMoveControllerSrc = GetComponent<PlayerMoveController>();
+
     }
 
-    
     void Update()
     {
         isPressE = Input.GetKeyDown(KeyCode.E);
 
-        if (isPressE && isGiveBox)
+        if (isPressE && itemSlot != null && isTakeItem)
         {
-            if (!playerMoveControllerSrc.isRaning)
-            {
-                if (!isTakeItem)
-                {
-                    isTakeItem = true;
-                }
-                else
-                {
-                    isTakeItem = false;
-                }
-            }
-            
+            targetBoxGO.GetComponent<BoxCollider>().isTrigger = true;
+            targetBoxGO.GetComponent<Rigidbody>().isKinematic = true;
+            targetBoxGO.transform.position = itemSlot.position;
+            isTakeItem = false;
+        }
 
+        else if (isPressE && targetBoxGO != null && isGiveBox && !isTakeItem)
+        {
+            isTakeItem = true;
+        }
+
+        else if (isPressE && isTakeItem)
+        {
+            targetBoxGO.GetComponent<BoxCollider>().isTrigger = false;
+            targetBoxGO.GetComponent<Rigidbody>().isKinematic = false;
+            isTakeItem = false;
         }
 
         if (isTakeItem)
         {
+            targetBoxGO.GetComponent<BoxCollider>().isTrigger = true;
+            targetBoxGO.GetComponent<Rigidbody>().isKinematic = false;
             targetBoxGO.transform.position = chestPointTRN.position;
         }
-
     }
 
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Box"))
-        {
-            isGiveBox = true;
-            targetBoxGO = other.gameObject.transform.parent.gameObject;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Box"))
-        {
-            isGiveBox = false;
-        }
-    }
-    
 }

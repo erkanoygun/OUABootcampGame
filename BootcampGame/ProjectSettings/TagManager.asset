@@ -10,14 +10,15 @@ TagManager:
   - pushBox
   - wall
   - takeItem
+  - itemSlot
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - TestLayer
   - Water
   - UI
-  - 
+  - ParticleSystem2
   - 
   - 
   - 
@@ -46,4 +47,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: New Layer 1
+    uniqueID: 1068957743
     locked: 0
