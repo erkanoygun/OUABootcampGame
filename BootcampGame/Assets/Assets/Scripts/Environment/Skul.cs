@@ -6,6 +6,8 @@ public class Skul : MonoBehaviour
 {
     Light _light;
     PlayerController _playerControllerSrc;
+
+    [SerializeField] private GameObject _cupboardRightDoor, _cupboardLeftDoor;
     void Start()
     {
         _playerControllerSrc = GameObject.Find("Player").GetComponent<PlayerController>();
@@ -19,6 +21,8 @@ public class Skul : MonoBehaviour
             if(other.gameObject.transform.parent.gameObject.transform.parent.name == "Cupboard"){
                 if(!_playerControllerSrc.isTakeItem){
                     _light.enabled = true;
+                    SetTriggerDoorAnim(_cupboardRightDoor);
+                    SetTriggerDoorAnim(_cupboardLeftDoor);
                 }
             }
             
@@ -31,6 +35,10 @@ public class Skul : MonoBehaviour
                 _light.enabled = false;
             }
         }
+    }
+
+    void SetTriggerDoorAnim(GameObject go){
+        go.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>().SetTrigger("Open");
     }
 
     

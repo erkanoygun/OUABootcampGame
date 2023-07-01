@@ -17,8 +17,9 @@ public class PlayerController : MonoBehaviour
     public bool isPushingBox = false;
     public bool isGiveBox = false;
     bool isPressE = false;
-
     public Transform itemSlot;
+
+    public bool _isHasKey = false;
 
 
     void Start()
@@ -59,6 +60,5 @@ public class PlayerController : MonoBehaviour
             targetBoxGO.transform.position = chestPointTRN.position;
         }
     }
-
 
 }
