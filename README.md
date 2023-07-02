@@ -88,9 +88,12 @@ Wake Up insanları bir çocuğun rüyası üzerinden oluşturduğumuz evreni ile
   Ürünün durumu:
 </li>
 
-  ![Ekran görüntüsü 2023-06-18 223035](https://github.com/erkanoygun/OUABootcampGame/assets/96135126/4819ef36-fbf4-4bdb-b594-3a200b1ad8ce) </br>
-![Ekran görüntüsü 2023-06-18 222938](https://github.com/erkanoygun/OUABootcampGame/assets/96135126/fa6ef684-c908-4ea4-8c60-954a9ba57f23) </br>
-![Ekran görüntüsü 2023-06-18 222916](https://github.com/erkanoygun/OUABootcampGame/assets/96135126/3dbb0ab9-c8d6-47af-8c7f-23d2d57c3d1a) </br>
+  ![res1](https://github.com/erkanoygun/OUABootcampGame/assets/96135126/c3568bae-63c7-4867-a5cf-0d3fea42189e)
+</br>
+![res2](https://github.com/erkanoygun/OUABootcampGame/assets/96135126/51b3db0b-8ba2-4467-b93d-ca177562ef0c)
+ </br>
+![res3](https://github.com/erkanoygun/OUABootcampGame/assets/96135126/05e2c739-468d-410a-bb7f-dd279264e05e)
+ </br>
 
 <li>
   Sprint Review:Alınan Kararlar: Oyunun içerisinde bulunan objelerle karakterimizin etkileşimi için gerekli olan mekanikler ve animasyonlar yapılmıştır.Gerekli itemleri yerleştirmek için mekanikler yapılmıştır.Oyunun belirli seviyelerinde kullanılacak olan buton ve anahtar tasarımları bulunmuştur.Oyunun girişinde bulunan duvar için kırılma vb animasyonlar kodlanmış ve entegre edilmiştir.Oyunun ilk bölümünde bulunan içerikler yerleştirilmiş level design tamamlanmaya yakın hale getirilmiştir
@@ -99,8 +102,10 @@ Wake Up insanları bir çocuğun rüyası üzerinden oluşturduğumuz evreni ile
 
 <li>
   Sprint Retrospective: </br>
-  Takım içinde görev dağılımı yapılmıştır. </br>
-  Takım üyelerine bulmaca fikri bulma konusunda hızlanılması gerektiği vurgulanmıştır
+  Oyunun atmosferi ve level dizaynında bazı değişikliklere gidilmiştir
+  İlk bölüm tasarımında çoğu şey hazır hale getirilmiştir
+  bulmaca konusundaki aciliyet ve eksiklik dile getirilmiştir</br>
+  
 
 
 </li>
@@ -108,7 +113,6 @@ Wake Up insanları bir çocuğun rüyası üzerinden oluşturduğumuz evreni ile
  ## Product Backlog URL</br>
 
 [Wake Up Team Backlog](https://trello.com/b/F17YZahw/wakeup)
-
 
 
 
