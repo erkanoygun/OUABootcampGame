@@ -82,7 +82,8 @@ Wake Up insanları bir çocuğun rüyası üzerinden oluşturduğumuz evreni ile
  Sprint board update:Ekran görüntüleri aşşağıdadır;
 </li>
 
-![Screenshot 2023-06-19 011233](https://github.com/erkanoygun/OUABootcampGame/assets/96135126/8c5dd4e6-f619-4cf4-812c-e201998476f8) </br>
+![Screenshot 2023-07-03 003113](https://github.com/erkanoygun/OUABootcampGame/assets/96135126/639b51c4-62f1-4b72-bd36-e8204bee709e)
+ </br>
 <li>
   Ürünün durumu:
 </li>
@@ -107,6 +108,8 @@ Wake Up insanları bir çocuğun rüyası üzerinden oluşturduğumuz evreni ile
  ## Product Backlog URL</br>
 
 [Wake Up Team Backlog](https://trello.com/b/F17YZahw/wakeup)
+
+
 
 
 
