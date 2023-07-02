@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundController : MonoBehaviour
 {
     private AudioSource _audioSource;
-    [SerializeField] private AudioClip walkClip;
+    [SerializeField] private AudioClip[] _audioClips;
     private PlayerMoveController _playerMoveControllerScr;
     void Start()
     {
@@ -20,7 +20,11 @@ public class SoundController : MonoBehaviour
     }
 
     void PlayWalkSound(){
-        _audioSource.clip = walkClip;
+        _audioSource.clip = _audioClips[0];
         _audioSource.Play();
+    }
+
+    public void PlayOneShotAnySound(int index){
+        _audioSource.PlayOneShot(_audioClips[index]);
     }
 }

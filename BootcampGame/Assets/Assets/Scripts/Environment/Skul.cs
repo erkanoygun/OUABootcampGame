@@ -6,6 +6,7 @@ public class Skul : MonoBehaviour
 {
     Light _light;
     PlayerController _playerControllerSrc;
+    [SerializeField] private GameObject _ImagePieceGO;
 
     [SerializeField] private GameObject _cupboardRightDoor, _cupboardLeftDoor;
     void Start()
@@ -23,6 +24,7 @@ public class Skul : MonoBehaviour
                     _light.enabled = true;
                     SetTriggerDoorAnim(_cupboardRightDoor);
                     SetTriggerDoorAnim(_cupboardLeftDoor);
+                    StartCoroutine(SetEnabledGameObject());
                 }
             }
             
@@ -41,5 +43,11 @@ public class Skul : MonoBehaviour
         go.gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>().SetTrigger("Open");
     }
 
-    
+    IEnumerator SetEnabledGameObject()
+    {
+        yield return new WaitForSeconds(1.5f);
+        if(_ImagePieceGO != null)
+            _ImagePieceGO.SetActive(true);
+
+    }
 }

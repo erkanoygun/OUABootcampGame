@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     Transform chestPointTRN;
     [SerializeField] private GameObject chestPointGO;
+    private SoundController _soundController;
 
     public GameObject targetBoxGO;
 
@@ -20,10 +21,12 @@ public class PlayerController : MonoBehaviour
     public Transform itemSlot;
 
     public bool _isHasKey = false;
+    private bool _isHasPieceImage1 = false, _isHasPieceImage2 = false, _isHasPieceImage3 = false;
 
 
     void Start()
     {
+        _soundController = gameObject.transform.GetChild(0).gameObject.GetComponent<SoundController>();
         chestPointTRN = chestPointGO.transform;
         playerMoveControllerSrc = GetComponent<PlayerMoveController>();
 
@@ -58,6 +61,22 @@ public class PlayerController : MonoBehaviour
             targetBoxGO.GetComponent<BoxCollider>().isTrigger = true;
             targetBoxGO.GetComponent<Rigidbody>().isKinematic = false;
             targetBoxGO.transform.position = chestPointTRN.position;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if(other.gameObject.CompareTag("PieceImage")){
+            if(other.gameObject.name == "PieceImage1"){
+                _isHasPieceImage1 = true;
+            }
+            else if(other.gameObject.name == "PieceImage2"){
+                _isHasPieceImage2 = true;
+            }
+            else if(other.gameObject.name == "PieceImage3"){
+                _isHasPieceImage3 = true;
+            }
+            _soundController.PlayOneShotAnySound(1);
+            Destroy(other.gameObject);
         }
     }
 
