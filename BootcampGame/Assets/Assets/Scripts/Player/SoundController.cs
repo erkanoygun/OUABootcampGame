@@ -20,11 +20,18 @@ public class SoundController : MonoBehaviour
     }
 
     void PlayWalkSound(){
-        _audioSource.clip = _audioClips[0];
+        _audioSource.clip = _audioClips[Random.Range(0,2)];
         _audioSource.Play();
     }
 
     public void PlayOneShotAnySound(int index){
         _audioSource.PlayOneShot(_audioClips[index]);
+    }
+
+    void PlayJumpSound()
+    {
+        Debug.Log("here");
+        _audioSource.clip = _audioClips[3];
+        _audioSource.Play();
     }
 }

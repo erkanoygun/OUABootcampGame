@@ -26,7 +26,7 @@ public class Wooden_Box : MonoBehaviour
                 _animator.SetTrigger("Open");
             }
             else{
-                Debug.Log("Kickeddd");
+                Debug.Log("Klickedddd!!!!");
             }
         }
     }

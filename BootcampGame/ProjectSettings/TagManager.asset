@@ -12,6 +12,7 @@ TagManager:
   - takeItem
   - itemSlot
   - PieceImage
+  - Key
   layers:
   - Default
   - TransparentFX

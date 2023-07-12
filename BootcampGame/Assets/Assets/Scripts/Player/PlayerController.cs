@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.TextCore.Text;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,8 +21,12 @@ public class PlayerController : MonoBehaviour
     bool isPressE = false;
     public Transform itemSlot;
 
+    [Header("Mission Values")]
     public bool _isHasKey = false;
-    private bool _isHasPieceImage1 = false, _isHasPieceImage2 = false, _isHasPieceImage3 = false;
+    public bool _isHasPieceImage1 = true, _isHasPieceImage2 = false, _isHasPieceImage3 = false;
+
+    [Header("UI Objects")]
+    [SerializeField] private Image PortraitPieceImage;
 
 
     void Start()
@@ -68,15 +73,24 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.CompareTag("PieceImage")){
             if(other.gameObject.name == "PieceImage1"){
                 _isHasPieceImage1 = true;
+                PortraitPieceImage.fillAmount += 0.33f;
             }
             else if(other.gameObject.name == "PieceImage2"){
                 _isHasPieceImage2 = true;
+                PortraitPieceImage.fillAmount += 0.33f;
             }
             else if(other.gameObject.name == "PieceImage3"){
                 _isHasPieceImage3 = true;
+                PortraitPieceImage.fillAmount += 0.34f;
             }
-            _soundController.PlayOneShotAnySound(1);
+            _soundController.PlayOneShotAnySound(2);
             Destroy(other.gameObject);
+        }
+
+        if(other.gameObject.CompareTag("Key"))
+        {
+            _isHasKey = true;
+            Destroy(other.gameObject, 1.5f);
         }
     }
 
