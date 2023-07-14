@@ -13,6 +13,7 @@ TagManager:
   - itemSlot
   - PieceImage
   - Key
+  - dragO
   layers:
   - Default
   - TransparentFX
