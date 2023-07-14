@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class FrameKey : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class FrameKey : MonoBehaviour
     PlayerController _playerControllerScr;
 
     [SerializeField] GameObject _keyGO;
+
+    [SerializeField] private Image PortraitPieceImage;
 
     private bool _isHasPiece1 = false, _isHasPiece2 = false, _isHasPiece3 = false;
     void Start()
@@ -47,16 +51,19 @@ public class FrameKey : MonoBehaviour
                 {
                     _canvasGO.transform.GetChild(1).gameObject.SetActive(true);
                     _isHasPiece1 = true;
+                    PortraitPieceImage.fillAmount -= 33;
                 }
                 if (_playerControllerScr._isHasPieceImage2 && !_canvasGO.transform.GetChild(2).gameObject.activeSelf)
                 {
                     _canvasGO.transform.GetChild(2).gameObject.SetActive(true);
                     _isHasPiece2 = true;
+                    PortraitPieceImage.fillAmount -= 33;
                 }
                 if (_playerControllerScr._isHasPieceImage2 && !_canvasGO.transform.GetChild(3).gameObject.activeSelf)
                 {
                     _canvasGO.transform.GetChild(3).gameObject.SetActive(true);
                     _isHasPiece3 = true;
+                    PortraitPieceImage.fillAmount -= 33;
                 }
             }
 

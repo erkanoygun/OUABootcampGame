@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 427078}
   - component: {fileID: 3357324}
   - component: {fileID: 2390066}
-  - component: {fileID: 64000013615305626}
+  - component: {fileID: 4435401294363351539}
   m_Layer: 0
   m_Name: trn_Barrel
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132260}
   m_LocalRotation: {x: -1, y: 0, z: 0, w: 0.000035539266}
-  m_LocalPosition: {x: 0, y: 0.27, z: 0.25}
+  m_LocalPosition: {x: 0, y: 0.552, z: 0.492}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64000013615305626
-MeshCollider:
+--- !u!65 &4435401294363351539
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,10 +94,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 371ac998b6d51ac4c8c09b047d8b28a5, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 2.6431231, y: 1.8922977, z: 1.7554324}
+  m_Center: {x: -0.0071902275, y: 0.19955349, z: 1.0242269}
 --- !u!1 &137782
 GameObject:
   m_ObjectHideFlags: 0
