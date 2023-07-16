@@ -114,6 +114,54 @@ Wake Up insanları bir çocuğun rüyası üzerinden oluşturduğumuz evreni ile
 
 [Wake Up Team Backlog](https://trello.com/b/F17YZahw/wakeup)
 
+# Sprint 3
+<li>
+  Sprint içinde tamamlanması tahmin edilen puan: 10 Puan
+  </li>
+<li>
+  Puan tamamlama mantığı: Toplamda proje boyunca tamamlanması gereken 34 puanlık backlog bulunmaktadır. 3 sprint'e bölündüğünde ilk sprint'in en azından 1 ile başlaması gerektiğine karar verildi.
+</li>
+<li>
+  Daily scrum: Toplantılarımızı iş bölümünü ve yapılan işleri kontrol etmek için 3 güne bir sesli olarak yapıyoruz.Kalan günlerde ise Whatsapp üzerinden gerçekleştiriyoruz.
+</li>
+<li>
+ Sprint board update:Ekran görüntüleri aşşağıdadır;
+</li>
+
+![sprint3 ](https://github.com/erkanoygun/OUABootcampGame/assets/96135126/0ff93e18-abc3-4df2-b3bd-8c09d801e9d7)
+![Screenshot 2023-07-17 000631](https://github.com/erkanoygun/OUABootcampGame/assets/96135126/6f19b144-8c3e-4c2e-83d2-df05fedb6202)
+
+ </br>
+<li>
+  Ürünün durumu:
+</li>
+
+![r1](https://github.com/erkanoygun/OUABootcampGame/assets/96135126/9102ca56-1c22-4c7e-9b65-783cc37efc8e)
+</br>
+![r2](https://github.com/erkanoygun/OUABootcampGame/assets/96135126/58f7158c-f60c-4796-81c5-0f9ddab0b05b)
+ </br>
+![r3](https://github.com/erkanoygun/OUABootcampGame/assets/96135126/685b4b93-3d1a-4186-b608-81b748154774)
+ </br>
+
+<li>
+  Sprint Review:Alınan Kararlar: Oyunun birinci ve ikinci bölümü gerek level tasarımı gerek mekanikleri olsun bitirilmiştir.Eksiğimiz olan UI tasarımı tamamlanmıştır.İç mekan modelleme ve texture işi bitirilmiştir.NPC lerin mekanikleri halledilmiştir.Bulmaca mekanikleri ve özel tasarımları yapılmıştır.Tek eksiğimiz olan videonun aciliyeti dile getirilmiş ve yapılmaktadır.
+
+</li> </br>
+
+<li>
+  Sprint Retrospective: </br>
+  Oyunun UI tasarımı yapılmıştır
+  İkinci bölüm hazır hale getirilmiştir
+  Farklı yönlerden kamera ile video çekimi için çalışılmaktadır</br>
+  
+
+
+</li>
+
+ ## Product Backlog URL</br>
+
+[Wake Up Team Backlog](https://trello.com/b/F17YZahw/wakeup)
+
 
 
 
