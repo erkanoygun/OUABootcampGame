@@ -11,6 +11,8 @@ public class Monster : MonoBehaviour
 
     bool isWalk = true;
 
+    bool _goToLeft = true;
+
     Collider[] objects;
 
     private void Start()
@@ -21,17 +23,32 @@ public class Monster : MonoBehaviour
 
     void Update()
     {
-        if(isWalk){
+        if (isWalk)
+        {
             animator.SetBool("Walk", true);
             animator.SetBool("Idle", false);
             float moveDistance = speed * Time.deltaTime;
-            transform.Translate(Vector3.forward * moveDistance);
-        }else{
+
+            if(_goToLeft){
+                transform.Translate(Vector3.forward * moveDistance);
+                transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+                if(transform.localPosition.z < -30)
+                    _goToLeft = false;
+            }
+            else{
+                transform.Translate(Vector3.forward * moveDistance);
+                transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+                if(transform.localPosition.z >= 30)
+                    _goToLeft = true;
+            }
+        }
+        else
+        {
             animator.SetBool("Walk", false);
             animator.SetBool("Idle", true);
             transform.Translate(Vector3.zero);
         }
-        
+
     }
 
     private void ScanArea()
@@ -39,9 +56,9 @@ public class Monster : MonoBehaviour
         objects = Physics.OverlapSphere(transform.position, detectionRadius);
         isWalk = true;
 
-        foreach(Collider item in objects)
+        foreach (Collider item in objects)
         {
-            if(item.gameObject.tag == "Player")
+            if (item.gameObject.tag == "Player")
             {
                 isWalk = false;
                 break;
